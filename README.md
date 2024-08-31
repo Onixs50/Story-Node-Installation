@@ -111,3 +111,8 @@ story validator create --stake 1000000000000000000 --private-key "your_private_k
 ```bash
 curl -s http://localhost:26657/status | jq .result.sync_info
 ```
+**or**
+```bash
+curl -s http://localhost:26657/status | jq
+
+```
