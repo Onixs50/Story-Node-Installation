@@ -40,8 +40,11 @@ story version
 ```
 
 ![image](https://github.com/user-attachments/assets/76065482-562a-41a8-8d05-1fed0b7c83a0)
-##Start
---change your moniker name--
+
+## Start
+
+>>change your moniker name
+
 ```bash
 story init --network iliad --moniker "onixia_node"
 ```
