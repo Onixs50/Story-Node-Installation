@@ -116,3 +116,8 @@ curl -s http://localhost:26657/status | jq .result.sync_info
 curl -s http://localhost:26657/status | jq
 
 ```
+## validator address
+```bash
+curl -s localhost:26657/status | jq -r '.result.validator_info.pub_key.value'
+```
+**chek it [here](https://testnet.story.explorers.guru) after catching_up is false**
