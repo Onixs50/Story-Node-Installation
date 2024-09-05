@@ -88,8 +88,8 @@ EOF
 ```
 ## peers
 ```bash 
-PEERS="cbaa226e66502b6b032f5e648d4d754f26bf9ca6@65.109.84.22:47656,d0e9bd78ffbd7584bdb5d47a5cc29302de9a2a9a@158.220.81.176:50992,500208ae8b0b20f8d74c16d14ed5f26492825a2a@37.27.91.228:26656,be00a9c3fd1d33e52cc89595c62b1b714cdf1f32@141.98.217.86:26656,2a8119813fd2300157154649bd946a458cbbe7e4@84.247.189.90:26656,aa6333bc781ba361e34770385e97a64ab10a4f8f@5.75.178.20:26656,e63e9aa76ab70b57f47c6c98e9d229b625ad3c37@185.185.82.170:26656,750a308126bd6ce31f2e55370f4eddc6fbb096f1@212.90.121.116:26656,9da641aec497be3ab6a3e8a2d2d5c7d38f773c31@194.163.172.171:26656,20a08afa877675aa66a65ee1ad36d5db4ae9dc5e@193.233.164.18:26656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$(curl -sS https://story-testnet-rpc.polkachu.com/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)\"/" $HOME/.story/story/config/config.toml
+
 ```
 ```bash
 sudo systemctl daemon-reload
