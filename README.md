@@ -121,3 +121,23 @@ curl -s http://localhost:26657/status | jq
 curl -s localhost:26657/status | jq -r '.result.validator_info.pub_key.value'
 ```
 **chek it [here](https://testnet.story.explorers.guru) after catching_up is false**
+
+**update**
+```bash
+sudo systemctl stop story
+sudo systemctl stop story-geth
+wget https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.3-b224fdf.tar.gz
+tar -xvf geth-linux-amd64-0.9.3-b224fdf.tar.gz
+rm -rf geth-linux-amd64-0.9.3-b224fdf.tar.gz
+mv ~/geth-linux-amd64-0.9.3-b224fdf/geth ~/go/bin/story-geth
+cd $HOME
+git clone https://github.com/piplabs/story
+cd $HOME/story
+git checkout v0.10.1
+go build -o story ./client
+sudo mv $HOME/story/story $HOME/go/bin/
+story version
+sudo systemctl restart story-geth
+sudo systemctl restart story && sudo journalctl -u story -f -o cat
+```
+
