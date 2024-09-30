@@ -118,7 +118,11 @@ curl -s http://localhost:26657/status | jq
 ```
 ## validator address
 ```bash
-curl -s localhost:26657/status | jq -r '.result.validator_info.pub_key.value'
+
+cd ~/.story/story/config
+
+cat priv_validator_key.json | grep address
+
 ```
 **chek it [here](https://testnet.story.explorers.guru) after catching_up is false**
 
