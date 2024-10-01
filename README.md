@@ -141,7 +141,7 @@ git clone https://github.com/piplabs/story $HOME/story
 cd $HOME/story
 git checkout v0.10.1
 go build -o story ./client
-sudo mv $HOME/.story/story $HOME/go/bin/
+sudo mv $HOME/story/story $HOME/go/bin/
 story version
 sudo systemctl restart story-geth
 sudo systemctl restart story && sudo journalctl -u story -f -o cat
