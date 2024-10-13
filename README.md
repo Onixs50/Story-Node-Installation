@@ -8,6 +8,7 @@ wget -O story-auto.py https://raw.githubusercontent.com/Onixs50/Story-Node-Insta
 python3 story-auto.py
 
 ```
+>> Manual installation
 ## Preparing the server
 ```bash 
 sudo apt update && sudo apt upgrade -y
