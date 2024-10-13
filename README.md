@@ -3,6 +3,10 @@
 ```bash
 pip install rich alive-progress
 
+wget -O story-auto.py https://raw.githubusercontent.com/Onixs50/Story-Node-Installation/refs/heads/main/story-auto.py
+
+python3 story-auto.py
+
 ```
 ## Preparing the server
 ```bash 
