@@ -1,4 +1,8 @@
 # Story-Node-Installation
+>> auto install 
+```bash
+curl 
+```
 ## Preparing the server
 ```bash 
 sudo apt update && sudo apt upgrade -y
@@ -145,7 +149,10 @@ sudo mv $HOME/story/story $HOME/go/bin/
 story version
 sudo systemctl restart story-geth
 sudo systemctl restart story && sudo journalctl -u story -f -o cat
-
+```
+**or**
+```bash
+sudo systemctl stop story && sudo systemctl stop story-geth && wget https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.3-b224fdf.tar.gz && tar -xvf geth-linux-amd64-0.9.3-b224fdf.tar.gz && rm -rf geth-linux-amd64-0.9.3-b224fdf.tar.gz && rm -rf ~/go/bin/story-geth && mv geth-linux-amd64-0.9.3-b224fdf/geth ~/go/bin/story-geth && rm -rf $HOME/story && mkdir -p $HOME/story && git clone https://github.com/piplabs/story $HOME/story && cd $HOME/story && git checkout v0.10.1 && go build -o story ./client && sudo mv $HOME/story/story $HOME/go/bin/ && story version && sudo systemctl restart story-geth && sudo systemctl restart story && sudo journalctl -u story -f -o cat
 ```
 ## Upgrade ##
 >> when at Height -> 1325860
