@@ -1,7 +1,8 @@
 # Story-Node-Installation
 >> auto install 
 ```bash
-curl 
+pip install rich alive-progress
+
 ```
 ## Preparing the server
 ```bash 
